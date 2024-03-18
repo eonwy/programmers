@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public long solution(String numbers) {
-        long answer = 0;
+        
         HashMap<String, Integer> map = new HashMap<String, Integer>(){{
             put("zero", 0);
             put("one", 1);
@@ -16,15 +16,11 @@ class Solution {
             put("nine", 9);
         }};
         
-        StringBuilder currentNum = new StringBuilder();
-        for(char c : numbers.toCharArray()){
-            currentNum.append(c);
-            String current = currentNum.toString();
-            if(map.containsKey(current)){
-                answer = answer * 10 + map.get(current);
-                currentNum.setLength(0);
-            }
-        }
-        return answer;
+        for(String x : map.keySet()) 
+            // x(two)에 해당하는 대응되는 값(2)을 map.get(x)로 가져옴
+            // toString을 이용해 numbers는 지금 String형태임
+            numbers = numbers.replaceAll(x, Integer.toString(map.get(x)));
+
+        return Long.parseLong(numbers);
     }
 }
