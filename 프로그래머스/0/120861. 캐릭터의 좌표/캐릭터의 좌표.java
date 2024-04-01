@@ -39,24 +39,6 @@ class Solution {
             }
         }
         
-        
-        // if(Math.abs(x) > bx / 2){
-        //     if(x < 0){
-        //         x = -(bx / 2);
-        //     }
-        //     else{
-        //         x = bx / 2;
-        //     }
-        // }
-        // if(Math.abs(y) > by / 2){
-        //     if(y < 0){
-        //         y = -(by / 2);
-        //     }
-        //     else{
-        //         y = by / 2;
-        //     }
-        // }
-        
         int[] answer = new int[]{x, y};
         return answer;
     }
