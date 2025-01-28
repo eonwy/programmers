@@ -1,0 +1,14 @@
+-- 코드를 입력하세요
+SELECT
+    CAR_TYPE,
+    COUNT(CAR_TYPE) AS CARS
+FROM
+    CAR_RENTAL_COMPANY_CAR C
+WHERE
+    C.OPTIONS LIKE '%통풍시트%'
+    OR C.OPTIONS LIKE '%열선시트%'
+    OR C.OPTIONS LIKE '%가죽시트%'
+GROUP BY
+    C.CAR_TYPE
+ORDER BY
+    C.CAR_TYPE
